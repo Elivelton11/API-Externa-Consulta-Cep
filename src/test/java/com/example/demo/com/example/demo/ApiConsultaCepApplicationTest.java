@@ -38,8 +38,6 @@ class ApiConsultaCepApplicationTest {
         mockMvc.perform(get("/consulta-cep").param("cep",cepValido)).andExpect(status().isOk()).andExpect(content().string(containsString("Criciúma")))
                 .andExpect(content().string(containsString("Rua Ararangua")));
 
-
-
     }
     @Test
     void testCreateFailure() throws Exception{
@@ -48,8 +46,5 @@ class ApiConsultaCepApplicationTest {
 
         when(restTemplate.getForObject(urlApi,ApplicationCepResultDTO.class)).thenThrow(new RestClientException("Cep não encontrado"));
         mockMvc.perform(get("/consulta-cep").param("cep", cepInvalido)).andExpect(status().isOk()).andExpect(content().string(contains("CEP não encontrado")));
-
-
-
     }
 }

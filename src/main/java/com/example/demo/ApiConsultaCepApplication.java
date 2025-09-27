@@ -8,6 +8,4 @@ public class ApiConsultaCepApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApiConsultaCepApplication.class, args);
-	}
-
-}
+	}}
